@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harish Sridharan — Python Software Engineer</title>
+  <meta name="description"
+    content="Python Software Engineer specialising in Backend Development, IAM/Security, and Data Engineering." />
+
+  <!-- ============================================================
+       HOW TO EDIT THIS FILE
+       ============================================================
+       Search for "EDIT:" comments to find every place you should
+       customise — name, role, projects, skills, links, etc.
+       ============================================================ -->
+
+  <style>
+    /* ── DESIGN TOKENS ─────────────────────────────────────────── */
+    :root {
+      /* EDIT: swap these hex values to change the whole colour scheme */
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1f2937;
+      --border: #30363d;
+      --accent: #00d4aa;
+      /* cyan-green primary */
+      --accent2: #3b82f6;
+      /* blue secondary */
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --danger: #f97316;
+
+      --radius: 10px;
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* ── NAV ────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #000 !important;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem !important;
+      transition: opacity .2s;
+    }
+
+    .nav-cta:hover {
+      opacity: .85;
+      text-decoration: none !important;
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    /* ── HERO ───────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle grid bg */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.18;
+    }
+
+    /* radial glow */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      color: var(--accent);
+      border-radius: 99px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    /* EDIT: change h1 to your name */
+    .hero-name {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-name .accent {
+      color: var(--accent);
+    }
+
+    /* EDIT: update this tagline */
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 36px;
+    }
+
+    .hero-tagline strong {
+      color: var(--text);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all .2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      opacity: .88;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── SECTION HEADER ─────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 56px;
+    }
+
+    /* ── TRIFECTA ───────────────────────────────────────────────── */
+    #about {
+      background: var(--surface);
+    }
+
+    .trifecta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .trifecta-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color .25s, transform .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trifecta-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .trifecta-card.backend::before {
+      background: var(--accent);
+    }
+
+    .trifecta-card.iam::before {
+      background: var(--accent2);
+    }
+
+    .trifecta-card.data::before {
+      background: var(--danger);
+    }
+
+    .trifecta-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .trifecta-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .trifecta-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .trifecta-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .trifecta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-family: monospace;
+    }
+
+    /* ── PROJECTS ───────────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color .25s, transform .25s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .project-icon {
+      font-size: 1.6rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .project-links a {
+      color: var(--muted);
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      transition: all .2s;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ── ARCHITECTURE DIAGRAM ───────────────────────────────────── */
+    #arch {
+      background: var(--surface);
+    }
+
+    .arch-diagram {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      overflow-x: auto;
+    }
+
+    .arch-diagram svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ── TECH TOOLBOX ───────────────────────────────────────────── */
+    .toolbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .toolbox-category {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .toolbox-category h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .toolbox-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tool-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      color: var(--text);
+      font-weight: 500;
+      transition: border-color .2s;
+    }
+
+    .tool-chip:hover {
+      border-color: var(--accent);
+    }
+
+    /* ── BLOG ───────────────────────────────────────────────────── */
+    #blog {
+      background: var(--surface);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .blog-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .25s;
+    }
+
+    .blog-card:hover {
+      border-color: var(--accent);
+    }
+
+    .blog-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .blog-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .blog-card p {
+      color: var(--muted);
+      font-size: 0.87rem;
+      line-height: 1.65;
+    }
+
+    .blog-read {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* ── CONTACT ────────────────────────────────────────────────── */
+    #contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 60px 40px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-box h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 22px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all .2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* ── SCROLL ANIMATION ───────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+        gap: 18px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+     NAV
+     EDIT: update links if you add/remove sections
+     ============================================================ -->
+  <nav>
+    <div class="inner">
+      <span class="nav-logo"><span>&lt;</span>HS<span>/&gt;</span></span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#toolbox">Toolbox</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <!-- EDIT: replace with your actual email -->
+        <li><a href="mailto:harishsridharan@gmail.com" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+     HERO
+     EDIT: name, tagline, GitHub link, email
+     ============================================================ -->
+  <section id="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge"><span class="dot"></span> Open to new opportunities</div>
+
+      <!-- EDIT: your name -->
+      <h1 class="hero-name">
+        Harish<br><span class="accent">Sridharan</span>
+      </h1>
+
+      <!-- EDIT: your 2-sentence pitch -->
+      <p class="hero-tagline">
+        I build <strong>robust Python backends</strong>, secure identity systems with
+        <strong>Auth0 &amp; OAuth2</strong>, and scalable <strong>data pipelines</strong>
+        that handle millions of events — from zero to production.
+      </p>
+
+      <div class="hero-btns">
+        <!-- EDIT: your GitHub username -->
+        <a href="https://github.com/Harish1308" target="_blank" class="btn btn-primary">
+          ⭐ GitHub
+        </a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     ABOUT / TRIFECTA
+     EDIT: update each card's description and tags as your skills evolve
+     ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">The Trifecta</h2>
+      <p class="section-sub">Three pillars that define my engineering practice — each one production-hardened.</p>
+
+      <div class="trifecta-grid">
+
+        <!-- Card 1: Backend -->
+        <div class="trifecta-card backend fade-in">
+          <div class="trifecta-icon">🔧</div>
+          <h3>Backend Development</h3>
+          <p>
+            Designing and shipping high-throughput REST and async APIs using
+            FastAPI and Django. I focus on clean architecture, testability,
+            and performance — from schema design to deployment.
+          </p>
+          <!-- EDIT: add/remove tags to match your actual stack -->
+          <div class="trifecta-tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Django</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <!-- Card 2: IAM/Security -->
+        <div class="trifecta-card iam fade-in">
+          <div class="trifecta-icon">🔐</div>
+          <h3>IAM &amp; Security</h3>
+          <p>
+            Implementing identity and access management with Auth0, OAuth 2.0,
+            and OpenID Connect. Experience securing APIs with JWTs, fine-grained
+            RBAC, and multi-tenant architectures.
+          </p>
+          <!-- EDIT: update tags -->
+          <div class="trifecta-tags">
+            <span class="tag">Auth0</span>
+            <span class="tag">OAuth2</span>
+            <span class="tag">OIDC</span>
+            <span class="tag">JWT</span>
+            <span class="tag">RBAC</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Data Engineering -->
+        <div class="trifecta-card data fade-in">
+          <div class="trifecta-icon">📊</div>
+          <h3>Data Engineering</h3>
+          <p>
+            Building reliable ETL pipelines with Airflow and Spark, landing
+            data into cloud lakes on AWS. From raw ingestion to analytics-ready
+            data marts, I care about lineage and reliability.
+          </p>
+          <!-- EDIT: update tags -->
+          <div class="trifecta-tags">
+            <span class="tag">Airflow</span>
+            <span class="tag">Spark</span>
+            <span class="tag">AWS S3</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">dbt</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PROJECTS
+     EDIT: replace with your real projects — title, description,
+     GitHub link, live demo link, and stack tags.
+     To add a project: copy one <div class="project-card"> block.
+     To remove one: delete the block.
+     ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">A handful of things I've built. More on GitHub.</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card fade-in">
+          <div class="project-header">
+            <div class="project-icon">🛡️</div>
+            <div class="project-links">
+              <a href="https://github.com/Harish1308/secure-saas-gateway" target="_blank">GitHub →</a>
+            </div>
+          </div>
+          <h3>Secure SaaS Gateway</h3>
+          <p>
+            An enterprise-grade IAM gateway demonstrating secure authentication between a single-page application and a
+            protected backend. Implements OAuth 2.0 Authorization Code Flow with PKCE, stateless cryptographic JWT
+            validation, refresh token rotation, and strict Role-Based Access Control (RBAC).
+          </p>
+          <div class="project-stack">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Vanilla JS</span>
+            <span class="tag">Auth0</span>
+            <span class="tag">OAuth 2.0</span>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project-card fade-in">
+          <div class="project-header">
+            <div class="project-icon">🛡️</div>
+            <div class="project-links">
+              <!-- EDIT: replace href with your actual repo URL -->
+              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
+              <!-- EDIT: add a live demo link, or remove this anchor tag -->
+              <!-- <a href="#" target="_blank">Live →</a> -->
+            </div>
+          </div>
+          <!-- EDIT: project name, description, stack -->
+          <h3>Auth0 API Gateway</h3>
+          <p>
+            A FastAPI-based gateway that enforces Auth0 JWT authentication,
+            fine-grained RBAC, and rate limiting across microservices. Supports
+            multi-tenant token scopes and per-route permission policies.
+          </p>
+          <div class="project-stack">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Auth0</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-in">
+          <div class="project-header">
+            <div class="project-icon">⚙️</div>
+            <div class="project-links">
+              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
+            </div>
+          </div>
+          <h3>Data Pipeline Orchestrator</h3>
+          <p>
+            End-to-end Airflow DAGs that ingest raw events from Kafka, transform
+            them with PySpark, and land partitioned Parquet files on AWS S3.
+            Includes data quality checks and alerting on failures.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Airflow</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">AWS S3</span>
+          </div>
+        </div>
+
+
+        <!-- Project 4 -->
+        <div class="project-card fade-in">
+          <div class="project-header">
+            <div class="project-icon">📈</div>
+            <div class="project-links">
+              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
+            </div>
+          </div>
+          <h3>Real-Time Analytics API</h3>
+          <p>
+            A streaming analytics backend built with FastAPI and ClickHouse,
+            serving sub-second query responses over 50M+ rows. Features a
+            materialised-view caching layer and a WebSocket live-feed endpoint.
+          </p>
+          <div class="project-stack">
+            <span class="tag">FastAPI</span>
+            <span class="tag">ClickHouse</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">Kafka</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     ARCHITECTURE DIAGRAM
+     EDIT: this SVG shows a typical Auth0 → API → DB flow.
+     You can swap the labels or add boxes to match your actual system.
+     ============================================================ -->
+  <section id="arch">
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-sub">A typical request flow through a secured API — the kind I build and maintain.</p>
+
+      <div class="arch-diagram fade-in">
+        <svg viewBox="0 0 820 240" width="100%" xmlns="http://www.w3.org/2000/svg"
+          font-family="Inter, system-ui, sans-serif" font-size="13">
+
+          <!-- boxes -->
+          <!-- User -->
+          <rect x="10" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="70" y="115" text-anchor="middle" fill="#e6edf3" font-weight="600">👤 User /</text>
+          <text x="70" y="133" text-anchor="middle" fill="#e6edf3" font-weight="600">Client App</text>
+
+          <!-- Auth0 -->
+          <rect x="185" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#3b82f6" stroke-width="1.5" />
+          <text x="245" y="115" text-anchor="middle" fill="#3b82f6" font-weight="600">🔐 Auth0</text>
+          <text x="245" y="133" text-anchor="middle" fill="#8b949e">JWT / Token</text>
+
+          <!-- API Gateway -->
+          <rect x="360" y="80" width="140" height="80" rx="8" fill="#1f2937" stroke="#00d4aa" stroke-width="1.5" />
+          <text x="430" y="112" text-anchor="middle" fill="#00d4aa" font-weight="600">⚡ FastAPI</text>
+          <text x="430" y="130" text-anchor="middle" fill="#8b949e">Gateway</text>
+          <text x="430" y="148" text-anchor="middle" fill="#8b949e">+ RBAC check</text>
+
+          <!-- Database -->
+          <rect x="560" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="620" y="115" text-anchor="middle" fill="#e6edf3" font-weight="600">🗄️ Database</text>
+          <text x="620" y="133" text-anchor="middle" fill="#8b949e">PostgreSQL</text>
+
+          <!-- Cache -->
+          <rect x="560" y="10" width="120" height="54" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="620" y="34" text-anchor="middle" fill="#e6edf3" font-weight="600">⚡ Redis</text>
+          <text x="620" y="52" text-anchor="middle" fill="#8b949e">Cache layer</text>
+
+          <!-- Data Lake -->
+          <rect x="560" y="176" width="120" height="54" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
+          <text x="620" y="200" text-anchor="middle" fill="#f97316" font-weight="600">☁️ AWS S3</text>
+          <text x="620" y="218" text-anchor="middle" fill="#8b949e">Data Lake</text>
+
+          <!-- Airflow -->
+          <rect x="700" y="176" width="110" height="54" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
+          <text x="755" y="200" text-anchor="middle" fill="#f97316" font-weight="600">🌀 Airflow</text>
+          <text x="755" y="218" text-anchor="middle" fill="#8b949e">Pipelines</text>
+
+          <!-- arrows -->
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#8b949e" />
+            </marker>
+            <marker id="arr-accent" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#00d4aa" />
+            </marker>
+          </defs>
+
+          <!-- User → Auth0 -->
+          <line x1="130" y1="120" x2="183" y2="120" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="4 3"
+            marker-end="url(#arr)" />
+          <text x="157" y="111" text-anchor="middle" fill="#8b949e" font-size="11">login</text>
+
+          <!-- Auth0 → API -->
+          <line x1="305" y1="120" x2="358" y2="120" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)" />
+          <text x="331" y="111" text-anchor="middle" fill="#3b82f6" font-size="11">JWT</text>
+
+          <!-- API → DB -->
+          <line x1="500" y1="120" x2="558" y2="120" stroke="#00d4aa" stroke-width="1.5" marker-end="url(#arr-accent)" />
+          <text x="529" y="111" text-anchor="middle" fill="#00d4aa" font-size="11">query</text>
+
+          <!-- API → Redis -->
+          <line x1="480" y1="80" x2="570" y2="62" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="4 3"
+            marker-end="url(#arr)" />
+          <text x="524" y="63" text-anchor="middle" fill="#8b949e" font-size="10">cache hit</text>
+
+          <!-- API → S3 -->
+          <line x1="480" y1="160" x2="560" y2="194" stroke="#f97316" stroke-width="1.2" stroke-dasharray="4 3"
+            marker-end="url(#arr)" />
+          <text x="514" y="192" text-anchor="middle" fill="#f97316" font-size="10">events</text>
+
+          <!-- S3 → Airflow -->
+          <line x1="680" y1="203" x2="698" y2="203" stroke="#f97316" stroke-width="1.5" marker-end="url(#arr)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     TECH TOOLBOX
+     EDIT: add/remove tools from each category, or add a new category block
+     ============================================================ -->
+  <section id="toolbox">
+    <div class="container">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">Technical Toolbox</h2>
+      <p class="section-sub">Tools and technologies I reach for regularly.</p>
+
+      <div class="toolbox-grid">
+
+        <div class="toolbox-category fade-in">
+          <h4>Languages</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">Python</span>
+            <span class="tool-chip">SQL</span>
+            <span class="tool-chip">Bash</span>
+            <span class="tool-chip">TypeScript</span>
+          </div>
+        </div>
+
+        <div class="toolbox-category fade-in">
+          <h4>Backend</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">FastAPI</span>
+            <span class="tool-chip">Django</span>
+            <span class="tool-chip">Pydantic</span>
+            <span class="tool-chip">SQLAlchemy</span>
+            <span class="tool-chip">Celery</span>
+          </div>
+        </div>
+
+        <div class="toolbox-category fade-in">
+          <h4>IAM / Security</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">Auth0</span>
+            <span class="tool-chip">OAuth2</span>
+            <span class="tool-chip">OpenID Connect</span>
+            <span class="tool-chip">JWT</span>
+            <span class="tool-chip">RBAC</span>
+          </div>
+        </div>
+
+        <div class="toolbox-category fade-in">
+          <h4>Data Engineering</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">Apache Airflow</span>
+            <span class="tool-chip">PySpark</span>
+            <span class="tool-chip">Kafka</span>
+            <span class="tool-chip">dbt</span>
+            <span class="tool-chip">Snowflake</span>
+          </div>
+        </div>
+
+        <div class="toolbox-category fade-in">
+          <h4>Databases</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">PostgreSQL</span>
+            <span class="tool-chip">MySQL</span>
+            <span class="tool-chip">Redis</span>
+            <span class="tool-chip">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="toolbox-category fade-in">
+          <h4>Cloud &amp; DevOps</h4>
+          <div class="toolbox-items">
+            <span class="tool-chip">AWS</span>
+            <span class="tool-chip">Docker</span>
+            <span class="tool-chip">GitHub Actions</span>
+            <span class="tool-chip">Terraform</span>
+            <span class="tool-chip">Linux</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     BLOG / NOTES
+     EDIT: update post titles, dates, and summaries.
+     Link each post to a real URL (e.g., Medium, Hashnode, Dev.to)
+     or remove the Blog section entirely if not needed.
+     ============================================================ -->
+  <section id="blog">
+    <div class="container">
+      <p class="section-label">Writing</p>
+      <h2 class="section-title">Blog &amp; Notes</h2>
+      <p class="section-sub">Short write-ups on things I've figured out the hard way.</p>
+
+      <div class="blog-grid">
+
+        <div class="blog-card fade-in">
+          <!-- EDIT: update date -->
+          <p class="blog-meta">📅 April 2025 · IAM</p>
+          <h3>Demystifying Auth0 Token Exchange: Machine-to-Machine Flows Explained</h3>
+          <p>
+            A deep dive into Auth0's M2M client credentials grant — how tokens are
+            scoped, cached, and revoked across microservices without user interaction.
+          </p>
+          <!-- EDIT: replace href with your actual post URL -->
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+
+        <div class="blog-card fade-in">
+          <p class="blog-meta">📅 February 2025 · Data Engineering</p>
+          <h3>Optimising PySpark Jobs for Skewed Data: 3 Patterns That Actually Work</h3>
+          <p>
+            Partition skew kills Spark performance silently. Here are the three
+            techniques I use — salting, broadcast joins, and adaptive execution —
+            and when to reach for each.
+          </p>
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+
+        <div class="blog-card fade-in">
+          <p class="blog-meta">📅 December 2024 · Backend</p>
+          <h3>FastAPI Dependency Injection: Building a Reusable Auth Middleware Layer</h3>
+          <p>
+            How I structured a single <code>get_current_user</code> dependency that
+            validates JWTs, resolves tenant context, and injects user roles — all
+            without repeating boilerplate across 40+ endpoints.
+          </p>
+          <a href="#" class="blog-read">Read more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     CONTACT
+     EDIT: update email, LinkedIn URL, and GitHub URL
+     ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box fade-in">
+        <h2>Let's build something.</h2>
+        <p>
+          Whether it's a backend system, a data pipeline, or an identity layer —
+          I'm always up for a good engineering conversation.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:harishsridharan97@gmail.com" class="contact-link">
+            ✉️ Email Me
+          </a>
+          <a href="https://linkedin.com/in/harishsridharan97" target="_blank" class="contact-link">
+            💼 LinkedIn
+          </a>
+          <a href="https://github.com/Harish1308" target="_blank" class="contact-link">
+            🐙 GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+  <footer>
+    <!-- EDIT: update year automatically via JS below, or hardcode -->
+    <p>© <span id="year"></span> Harish Sridharan · Built with vanilla HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <!-- ============================================================
+     JS: scroll animations, year, mobile nav
+     ============================================================ -->
+  <script>
+    // Auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>
