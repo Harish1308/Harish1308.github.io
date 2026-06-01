@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harish Sridharan — Python Software Engineer</title>
+  <title>Harish Sridharan — AI Engineer</title>
   <meta name="description"
-    content="Python Software Engineer specialising in Backend Development, IAM/Security, and Data Engineering." />
+    content="AI Engineer specialising in LLM applications, autonomous agents, and Backend Development." />
 
   <!-- ============================================================
        HOW TO EDIT THIS FILE
@@ -726,8 +726,8 @@
       <!-- EDIT: your 2-sentence pitch -->
       <p class="hero-tagline">
         I build <strong>robust Python backends</strong>, secure identity systems with
-        <strong>Auth0 &amp; OAuth2</strong>, and scalable <strong>data pipelines</strong>
-        that handle millions of events — from zero to production.
+        <strong>Auth0 &amp; OAuth2</strong>, and <strong>AI-powered applications</strong>
+        that put LLMs to real production use — from zero to deployed.
       </p>
 
       <div class="hero-btns">
@@ -790,22 +790,21 @@
           </div>
         </div>
 
-        <!-- Card 3: Data Engineering -->
+        <!-- Card 3: AI Engineering -->
         <div class="trifecta-card data fade-in">
-          <div class="trifecta-icon">📊</div>
-          <h3>Data Engineering</h3>
+          <div class="trifecta-icon">🤖</div>
+          <h3>AI Engineering</h3>
           <p>
-            Building reliable ETL pipelines with Airflow and Spark, landing
-            data into cloud lakes on AWS. From raw ingestion to analytics-ready
-            data marts, I care about lineage and reliability.
+            Building autonomous LLM agents with ReAct loops, designing multi-step
+            tool-use pipelines, and shipping AI-powered products. From prompt
+            engineering to production deployment — I make LLMs actually useful.
           </p>
-          <!-- EDIT: update tags -->
           <div class="trifecta-tags">
-            <span class="tag">Airflow</span>
-            <span class="tag">Spark</span>
-            <span class="tag">AWS S3</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">dbt</span>
+            <span class="tag">LLM APIs</span>
+            <span class="tag">ReAct Agents</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">Prompt Eng.</span>
           </div>
         </div>
 
@@ -875,48 +874,53 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project: Autonomous Research Agent -->
         <div class="project-card fade-in">
           <div class="project-header">
-            <div class="project-icon">⚙️</div>
+            <div class="project-icon">🔬</div>
             <div class="project-links">
-              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
+              <a href="https://github.com/Harish1308/autonomous-research-agent" target="_blank">GitHub →</a>
             </div>
           </div>
-          <h3>Data Pipeline Orchestrator</h3>
+          <h3>Autonomous Research Agent</h3>
           <p>
-            End-to-end Airflow DAGs that ingest raw events from Kafka, transform
-            them with PySpark, and land partitioned Parquet files on AWS S3.
-            Includes data quality checks and alerting on failures.
+            A Python CLI agent that answers research questions by autonomously
+            searching the web, scraping pages, and writing structured markdown
+            reports — built from scratch using a ReAct (Reason + Act) loop with
+            4 tools, source credibility scoring, and a full pytest suite.
+            Provider-agnostic: works with both OpenAI and Anthropic.
           </p>
           <div class="project-stack">
-            <span class="tag">Airflow</span>
-            <span class="tag">PySpark</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">AWS S3</span>
+            <span class="tag">Python</span>
+            <span class="tag">ReAct Loop</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Anthropic API</span>
+            <span class="tag">BeautifulSoup</span>
           </div>
         </div>
 
-
-        <!-- Project 4 -->
+        <!-- Project: QuestLife Desktop -->
         <div class="project-card fade-in">
           <div class="project-header">
-            <div class="project-icon">📈</div>
+            <div class="project-icon">🎮</div>
             <div class="project-links">
-              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
+              <a href="https://github.com/Harish1308/questlife-desktop" target="_blank">GitHub →</a>
             </div>
           </div>
-          <h3>Real-Time Analytics API</h3>
+          <h3>QuestLife Desktop</h3>
           <p>
-            A streaming analytics backend built with FastAPI and ClickHouse,
-            serving sub-second query responses over 50M+ rows. Features a
-            materialised-view caching layer and a WebSocket live-feed endpoint.
+            A gamified productivity desktop app for deep work tracking, habit
+            breaking, and streak building — built entirely with AI coding agents.
+            Features a daily timeline, dual focus/waste timers, addiction tracker,
+            and analytics. Built on Tauri v2 + React + SQLite with a Space
+            Neobrutalism HUD aesthetic.
           </p>
           <div class="project-stack">
-            <span class="tag">FastAPI</span>
-            <span class="tag">ClickHouse</span>
-            <span class="tag">WebSockets</span>
-            <span class="tag">Kafka</span>
+            <span class="tag">Tauri v2</span>
+            <span class="tag">React 18</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Rust</span>
+            <span class="tag">SQLite</span>
           </div>
         </div>
 
@@ -933,50 +937,13 @@
     <div class="container">
       <p class="section-label">How It Works</p>
       <h2 class="section-title">System Architecture</h2>
-      <p class="section-sub">A typical request flow through a secured API — the kind I build and maintain.</p>
+      <p class="section-sub">An AI-powered SaaS backend — showing how auth, application logic, AI inference, and data
+        all connect.</p>
 
       <div class="arch-diagram fade-in">
-        <svg viewBox="0 0 820 240" width="100%" xmlns="http://www.w3.org/2000/svg"
+        <svg viewBox="0 0 860 300" width="100%" xmlns="http://www.w3.org/2000/svg"
           font-family="Inter, system-ui, sans-serif" font-size="13">
 
-          <!-- boxes -->
-          <!-- User -->
-          <rect x="10" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
-          <text x="70" y="115" text-anchor="middle" fill="#e6edf3" font-weight="600">👤 User /</text>
-          <text x="70" y="133" text-anchor="middle" fill="#e6edf3" font-weight="600">Client App</text>
-
-          <!-- Auth0 -->
-          <rect x="185" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#3b82f6" stroke-width="1.5" />
-          <text x="245" y="115" text-anchor="middle" fill="#3b82f6" font-weight="600">🔐 Auth0</text>
-          <text x="245" y="133" text-anchor="middle" fill="#8b949e">JWT / Token</text>
-
-          <!-- API Gateway -->
-          <rect x="360" y="80" width="140" height="80" rx="8" fill="#1f2937" stroke="#00d4aa" stroke-width="1.5" />
-          <text x="430" y="112" text-anchor="middle" fill="#00d4aa" font-weight="600">⚡ FastAPI</text>
-          <text x="430" y="130" text-anchor="middle" fill="#8b949e">Gateway</text>
-          <text x="430" y="148" text-anchor="middle" fill="#8b949e">+ RBAC check</text>
-
-          <!-- Database -->
-          <rect x="560" y="80" width="120" height="80" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
-          <text x="620" y="115" text-anchor="middle" fill="#e6edf3" font-weight="600">🗄️ Database</text>
-          <text x="620" y="133" text-anchor="middle" fill="#8b949e">PostgreSQL</text>
-
-          <!-- Cache -->
-          <rect x="560" y="10" width="120" height="54" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
-          <text x="620" y="34" text-anchor="middle" fill="#e6edf3" font-weight="600">⚡ Redis</text>
-          <text x="620" y="52" text-anchor="middle" fill="#8b949e">Cache layer</text>
-
-          <!-- Data Lake -->
-          <rect x="560" y="176" width="120" height="54" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
-          <text x="620" y="200" text-anchor="middle" fill="#f97316" font-weight="600">☁️ AWS S3</text>
-          <text x="620" y="218" text-anchor="middle" fill="#8b949e">Data Lake</text>
-
-          <!-- Airflow -->
-          <rect x="700" y="176" width="110" height="54" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
-          <text x="755" y="200" text-anchor="middle" fill="#f97316" font-weight="600">🌀 Airflow</text>
-          <text x="755" y="218" text-anchor="middle" fill="#8b949e">Pipelines</text>
-
-          <!-- arrows -->
           <defs>
             <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="#8b949e" />
@@ -984,33 +951,101 @@
             <marker id="arr-accent" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="#00d4aa" />
             </marker>
+            <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6" />
+            </marker>
+            <marker id="arr-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#f97316" />
+            </marker>
           </defs>
 
-          <!-- User → Auth0 -->
-          <line x1="130" y1="120" x2="183" y2="120" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="4 3"
+          <!-- ── LAYER LABELS ── -->
+          <text x="65" y="18" text-anchor="middle" fill="#30363d" font-size="11" font-weight="700"
+            text-transform="uppercase">CLIENT</text>
+          <text x="230" y="18" text-anchor="middle" fill="#30363d" font-size="11" font-weight="700">AUTH</text>
+          <text x="400" y="18" text-anchor="middle" fill="#30363d" font-size="11" font-weight="700">API LAYER</text>
+          <text x="590" y="18" text-anchor="middle" fill="#30363d" font-size="11" font-weight="700">AI LAYER</text>
+          <text x="770" y="18" text-anchor="middle" fill="#30363d" font-size="11" font-weight="700">DATA</text>
+
+          <!-- Client -->
+          <rect x="10" y="110" width="110" height="70" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="65" y="141" text-anchor="middle" fill="#e6edf3" font-weight="600">👤 Client</text>
+          <text x="65" y="159" text-anchor="middle" fill="#8b949e">SPA / Mobile</text>
+
+          <!-- Auth0 -->
+          <rect x="170" y="110" width="120" height="70" rx="8" fill="#1f2937" stroke="#3b82f6" stroke-width="1.5" />
+          <text x="230" y="138" text-anchor="middle" fill="#3b82f6" font-weight="600">🔐 Auth0</text>
+          <text x="230" y="156" text-anchor="middle" fill="#8b949e">PKCE + JWT</text>
+          <text x="230" y="172" text-anchor="middle" fill="#8b949e">RBAC scopes</text>
+
+          <!-- FastAPI Gateway -->
+          <rect x="340" y="95" width="120" height="100" rx="8" fill="#1f2937" stroke="#00d4aa" stroke-width="2" />
+          <text x="400" y="123" text-anchor="middle" fill="#00d4aa" font-weight="700">⚡ FastAPI</text>
+          <text x="400" y="141" text-anchor="middle" fill="#8b949e">JWT validate</text>
+          <text x="400" y="157" text-anchor="middle" fill="#8b949e">Rate limiting</text>
+          <text x="400" y="173" text-anchor="middle" fill="#8b949e">Route guards</text>
+
+          <!-- LLM Service -->
+          <rect x="510" y="30" width="150" height="70" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
+          <text x="585" y="57" text-anchor="middle" fill="#f97316" font-weight="600">🧠 LLM Service</text>
+          <text x="585" y="75" text-anchor="middle" fill="#8b949e">OpenAI / Claude</text>
+          <text x="585" y="91" text-anchor="middle" fill="#8b949e">streaming resp.</text>
+
+          <!-- Vector DB -->
+          <rect x="510" y="120" width="150" height="70" rx="8" fill="#1f2937" stroke="#f97316" stroke-width="1.5" />
+          <text x="585" y="148" text-anchor="middle" fill="#f97316" font-weight="600">🔍 Vector DB</text>
+          <text x="585" y="166" text-anchor="middle" fill="#8b949e">pgvector / Pinecone</text>
+          <text x="585" y="182" text-anchor="middle" fill="#8b949e">semantic search</text>
+
+          <!-- PostgreSQL -->
+          <rect x="710" y="95" width="130" height="60" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="775" y="121" text-anchor="middle" fill="#e6edf3" font-weight="600">🗄️ PostgreSQL</text>
+          <text x="775" y="139" text-anchor="middle" fill="#8b949e">App data + users</text>
+
+          <!-- Redis -->
+          <rect x="710" y="175" width="130" height="60" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="775" y="201" text-anchor="middle" fill="#e6edf3" font-weight="600">⚡ Redis</text>
+          <text x="775" y="219" text-anchor="middle" fill="#8b949e">Cache + sessions</text>
+
+          <!-- Worker Queue -->
+          <rect x="340" y="220" width="120" height="60" rx="8" fill="#1f2937" stroke="#30363d" stroke-width="1.5" />
+          <text x="400" y="246" text-anchor="middle" fill="#e6edf3" font-weight="600">📬 Celery</text>
+          <text x="400" y="264" text-anchor="middle" fill="#8b949e">Async task queue</text>
+
+          <!-- ── ARROWS ── -->
+
+          <!-- Client → Auth0 -->
+          <line x1="120" y1="145" x2="168" y2="145" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="4 3"
             marker-end="url(#arr)" />
-          <text x="157" y="111" text-anchor="middle" fill="#8b949e" font-size="11">login</text>
+          <text x="144" y="136" text-anchor="middle" fill="#8b949e" font-size="11">login</text>
 
-          <!-- Auth0 → API -->
-          <line x1="305" y1="120" x2="358" y2="120" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)" />
-          <text x="331" y="111" text-anchor="middle" fill="#3b82f6" font-size="11">JWT</text>
+          <!-- Auth0 → FastAPI -->
+          <line x1="290" y1="145" x2="338" y2="145" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr-blue)" />
+          <text x="314" y="136" text-anchor="middle" fill="#3b82f6" font-size="11">JWT</text>
 
-          <!-- API → DB -->
-          <line x1="500" y1="120" x2="558" y2="120" stroke="#00d4aa" stroke-width="1.5" marker-end="url(#arr-accent)" />
-          <text x="529" y="111" text-anchor="middle" fill="#00d4aa" font-size="11">query</text>
+          <!-- FastAPI → LLM -->
+          <line x1="460" y1="120" x2="508" y2="85" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4 3"
+            marker-end="url(#arr-orange)" />
+          <text x="492" y="95" text-anchor="middle" fill="#f97316" font-size="11">prompt</text>
 
-          <!-- API → Redis -->
-          <line x1="480" y1="80" x2="570" y2="62" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="4 3"
+          <!-- FastAPI → Vector DB -->
+          <line x1="460" y1="155" x2="508" y2="155" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4 3"
+            marker-end="url(#arr-orange)" />
+          <text x="484" y="146" text-anchor="middle" fill="#f97316" font-size="11">embed</text>
+
+          <!-- FastAPI → PostgreSQL -->
+          <line x1="460" y1="135" x2="708" y2="120" stroke="#00d4aa" stroke-width="1.5" marker-end="url(#arr-accent)" />
+          <text x="590" y="120" text-anchor="middle" fill="#00d4aa" font-size="11">query</text>
+
+          <!-- FastAPI → Redis -->
+          <line x1="460" y1="175" x2="708" y2="200" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="4 3"
             marker-end="url(#arr)" />
-          <text x="524" y="63" text-anchor="middle" fill="#8b949e" font-size="10">cache hit</text>
+          <text x="590" y="200" text-anchor="middle" fill="#8b949e" font-size="10">cache</text>
 
-          <!-- API → S3 -->
-          <line x1="480" y1="160" x2="560" y2="194" stroke="#f97316" stroke-width="1.2" stroke-dasharray="4 3"
+          <!-- FastAPI → Celery -->
+          <line x1="400" y1="195" x2="400" y2="218" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="4 3"
             marker-end="url(#arr)" />
-          <text x="514" y="192" text-anchor="middle" fill="#f97316" font-size="10">events</text>
-
-          <!-- S3 → Airflow -->
-          <line x1="680" y1="203" x2="698" y2="203" stroke="#f97316" stroke-width="1.5" marker-end="url(#arr)" />
+          <text x="418" y="212" text-anchor="middle" fill="#8b949e" font-size="10">offload</text>
         </svg>
       </div>
     </div>
@@ -1061,13 +1096,13 @@
         </div>
 
         <div class="toolbox-category fade-in">
-          <h4>Data Engineering</h4>
+          <h4>AI &amp; LLM</h4>
           <div class="toolbox-items">
-            <span class="tool-chip">Apache Airflow</span>
-            <span class="tool-chip">PySpark</span>
-            <span class="tool-chip">Kafka</span>
-            <span class="tool-chip">dbt</span>
-            <span class="tool-chip">Snowflake</span>
+            <span class="tool-chip">OpenAI API</span>
+            <span class="tool-chip">Anthropic API</span>
+            <span class="tool-chip">LangChain</span>
+            <span class="tool-chip">Prompt Engineering</span>
+            <span class="tool-chip">RAG</span>
           </div>
         </div>
 
@@ -1111,37 +1146,47 @@
       <div class="blog-grid">
 
         <div class="blog-card fade-in">
-          <!-- EDIT: update date -->
-          <p class="blog-meta">📅 April 2025 · IAM</p>
-          <h3>Demystifying Auth0 Token Exchange: Machine-to-Machine Flows Explained</h3>
+          <p class="blog-meta">📅 April 2025 · Backend Development</p>
+          <h3>Building High-Throughput FastAPI Services: Async Patterns That Actually Scale</h3>
           <p>
-            A deep dive into Auth0's M2M client credentials grant — how tokens are
-            scoped, cached, and revoked across microservices without user interaction.
+            Most FastAPI tutorials show you CRUD endpoints. They don't show you what happens when
+            you need to handle 500 concurrent requests hitting a service that fans out to a database,
+            a cache, and an external API. The answer isn't more workers — it's understanding how
+            Python's async event loop actually behaves under load. I walk through three architectural
+            patterns I've used in production: background task offloading with Celery, connection pool
+            sizing for asyncpg, and structuring dependency injection so your test suite doesn't require
+            a live database. The goal is services that are fast, testable, and honest about their failure modes.
           </p>
-          <!-- EDIT: replace href with your actual post URL -->
-          <a href="#" class="blog-read">Read more →</a>
         </div>
 
         <div class="blog-card fade-in">
-          <p class="blog-meta">📅 February 2025 · Data Engineering</p>
-          <h3>Optimising PySpark Jobs for Skewed Data: 3 Patterns That Actually Work</h3>
+          <p class="blog-meta">📅 November 2025 · IAM &amp; Security</p>
+          <h3>OAuth 2.0 in Practice: What the Spec Doesn't Tell You About Multi-Tenant RBAC</h3>
           <p>
-            Partition skew kills Spark performance silently. Here are the three
-            techniques I use — salting, broadcast joins, and adaptive execution —
-            and when to reach for each.
+            The OAuth 2.0 spec is thorough. Auth0's docs are good. Neither one tells you what to
+            do when you have a B2B SaaS with ten enterprise customers, each with their own roles,
+            their own admin users, and the expectation that Org A can never see Org B's data —
+            even if they share the same Auth0 tenant. This post covers the token design decisions
+            that matter: how I embed tenant context into JWTs without bloating them, how fine-grained
+            RBAC works when roles live in your database rather than the IdP, and how refresh token
+            rotation interacts with session management in SPAs. Plus the one mistake I see in almost
+            every implementation: treating <code>sub</code> as a stable user identifier.
           </p>
-          <a href="#" class="blog-read">Read more →</a>
         </div>
 
         <div class="blog-card fade-in">
-          <p class="blog-meta">📅 December 2024 · Backend</p>
-          <h3>FastAPI Dependency Injection: Building a Reusable Auth Middleware Layer</h3>
+          <p class="blog-meta">📅 January 2026 · AI Engineering</p>
+          <h3>From LLM Call to Production Feature: What Changes When AI Enters Your Backend</h3>
           <p>
-            How I structured a single <code>get_current_user</code> dependency that
-            validates JWTs, resolves tenant context, and injects user roles — all
-            without repeating boilerplate across 40+ endpoints.
+            Calling an LLM API is three lines of code. Shipping it as a reliable backend feature
+            is a different problem. I've gone through this cycle enough times to see the patterns:
+            latency spikes when the model is under load, token budgets that blow up on edge-case
+            inputs, streaming responses that your frontend wasn't designed for, and the fun of
+            writing integration tests when your primary dependency is non-deterministic. This post
+            documents the production concerns I now plan for upfront — request timeout strategy,
+            output schema validation with Pydantic, graceful degradation when the model is unavailable,
+            and how to structure your prompts so they're versionable and testable like any other code.
           </p>
-          <a href="#" class="blog-read">Read more →</a>
         </div>
 
       </div>
@@ -1157,7 +1202,7 @@
       <div class="contact-box fade-in">
         <h2>Let's build something.</h2>
         <p>
-          Whether it's a backend system, a data pipeline, or an identity layer —
+          Whether it's an AI agent, a secured backend, or an LLM-powered product —
           I'm always up for a good engineering conversation.
         </p>
         <div class="contact-links">
