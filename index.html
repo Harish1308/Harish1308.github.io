@@ -848,28 +848,32 @@
           </div>
         </div>
 
-        <!-- Project 1 -->
+        <!-- Project: MPaaS -->
         <div class="project-card fade-in">
           <div class="project-header">
-            <div class="project-icon">🛡️</div>
+            <div class="project-icon">⚙️</div>
             <div class="project-links">
-              <!-- EDIT: replace href with your actual repo URL -->
-              <a href="https://github.com/Harish1308" target="_blank">GitHub →</a>
-              <!-- EDIT: add a live demo link, or remove this anchor tag -->
-              <!-- <a href="#" target="_blank">Live →</a> -->
+              <a href="https://github.com/Harish1308/MPaaS" target="_blank">GitHub →</a>
             </div>
           </div>
-          <!-- EDIT: project name, description, stack -->
-          <h3>Auth0 API Gateway</h3>
+          <h3>MPaaS — Media Processing as a Service</h3>
           <p>
-            A FastAPI-based gateway that enforces Auth0 JWT authentication,
-            fine-grained RBAC, and rate limiting across microservices. Supports
-            multi-tenant token scopes and per-route permission policies.
+            A distributed media processing platform built to production patterns.
+            Users upload images via a React UI, a FastAPI backend streams them to
+            MinIO object storage, and Celery workers consume from a two-priority
+            RabbitMQ queue topology to apply transforms. Progress streams back
+            live over WebSockets via Redis pub/sub. Full observability stack:
+            custom Prometheus metrics, Grafana dashboards provisioned at boot,
+            and Flower for Celery monitoring — all wired up in Docker Compose.
           </p>
           <div class="project-stack">
             <span class="tag">FastAPI</span>
-            <span class="tag">Auth0</span>
-            <span class="tag">PostgreSQL</span>
+            <span class="tag">Celery</span>
+            <span class="tag">RabbitMQ</span>
+            <span class="tag">MinIO</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">Prometheus</span>
+            <span class="tag">Grafana</span>
             <span class="tag">Docker</span>
           </div>
         </div>
